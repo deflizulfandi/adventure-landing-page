@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #AEA853;
+  background-image: url(../img/hero.png);
+  background-size: 69vmax;
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 20px 0;
+  position: fixed;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  width: 50%;
+  text-decoration: none;
+}
+
+.brand a {
+  text-decoration: none;
+  color: #006969;
+  text-transform: uppercase;
+  -webkit-transition: 0.5s color ease;
+  transition: 0.5s color ease;
+  font-size: 20px;
+  margin-left: 0;
+}
+
+.brand a:hover {
+  color: #AEA853;
+}
+
+ul a {
+  margin-left: 70px;
+  padding: 5px;
+  color: #006969;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-transition: all  0.5s ease;
+  transition: all  0.5s ease;
+}
+
+ul a:hover {
+  color: white;
+  background-color: #006969;
+  border-radius: 5px;
+}
+
+.menu-toggle {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -6px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #006969;
+  margin-top: 5px;
+  border-radius: 3px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.content {
+  width: 50%;
+  margin-left: 117px;
+  padding-top: 130px;
+}
+
+.content h1 {
+  text-transform: uppercase;
+  color: #006969;
+  font-weight: 900;
+  font-size: 80px;
+}
+
+.content h2 {
+  text-transform: uppercase;
+  color: #AEA853;
+  font-size: 65px;
+}
+
+.content p {
+  width: 550px;
+  padding-top: 50px;
+  color: #006969;
+  text-transform: uppercase;
+}
+
+.content a {
+  display: inline-block;
+  color: white;
+  text-transform: uppercase;
+  background-color: #006969;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 2em;
+  padding: 1em 2em;
+  margin-top: 50px;
+  margin-left: 25%;
+}
+
+/* Humberger Menu Aanimation */
+.menu-toggle span:nth-child(2) {
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+}
+
+/* Menggunakan Konsep sibling [~] */
+.menu-toggle input:checked ~ span:nth-child(2) {
+  -webkit-transform: rotate(45deg) translate(-2px, 1px);
+          transform: rotate(45deg) translate(-2px, 1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  -webkit-transform: rotate(-45deg) translate(-5px, 0);
+          transform: rotate(-45deg) translate(-5px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+/* Responsive Uk:Tablet */
+@media screen and (max-width: 768px) {
+  body {
+    background-image: url(../img/hero.png);
+    background-size: 69vmax;
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding-left: -100px;
+    position: fixed;
+  }
+  nav ul {
+    color: #006969;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: #AEA853;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    z-index: -1;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    opacity: 0;
+  }
+  .brand h4 {
+    text-decoration: none;
+    color: #006969;
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+  .brand h4:hover {
+    color: #AEA853;
+  }
+  .content {
+    width: 50%;
+    margin-left: 50px;
+    padding-top: 50px;
+  }
+  .content h1 {
+    margin-top: 20px;
+    text-transform: uppercase;
+    color: #006969;
+    font-weight: bolder;
+    font-size: 25px;
+  }
+  .content h2 {
+    text-transform: uppercase;
+    color: #AEA853;
+    font-size: 30px;
+  }
+  .content h1 {
+    font-size: 50px;
+  }
+  .content p {
+    display: none;
+  }
+  .menu-toggle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 20px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: relative;
+  }
+  .content a {
+    display: inline-block;
+    color: white;
+    text-transform: uppercase;
+    background-color: #006969;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 2em;
+    padding: 0.5em 1.5em;
+    margin-top: 10px;
+    margin-left: -10px;
+  }
+}
+
+nav ul.slide {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+/*# sourceMappingURL=main.css.map */

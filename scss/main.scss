@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+// Variabel 
+$warna2 :#AEA853;
+$warna1 : #006969;
+
+// style 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: $warna2;
+    background-image: url(../img/hero.png);
+    background-size: 69vmax;
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+// Element
+    nav {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        padding: 20px 0;
+        position: fixed;
+    }
+    nav ul{
+        display: flex;
+        list-style: none;
+        width: 50%;
+        text-decoration: none;
+    }
+    .brand a{
+        text-decoration: none;
+        color: $warna1;
+        text-transform: uppercase;
+        transition: 0.5s color ease;
+        font-size: 20px;
+        margin-left: 0;
+        &:hover{
+            color: $warna2;
+        }
+    }
+    ul a{
+        margin-left: 70px;
+        padding: 5px;
+        color: $warna1;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: all  0.5s ease;
+        &:hover{
+            color: white;
+            background-color: $warna1;
+            border-radius: 5px;
+        }
+    }
+    // Humberger Menu
+    .menu-toggle{
+        display: none;
+        flex-direction: column;
+        height: 20px;
+        justify-content: space-between;
+        position: relative;
+    }
+    .menu-toggle input{
+        position: absolute;
+        width: 40px;
+        height: 28px;
+        left: -6px;
+        top: -3px;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 2;
+    }
+    .menu-toggle span{
+        display: block;
+        width: 28px;
+        height: 3px;
+        background-color:$warna1;
+        margin-top: 5px;
+        border-radius: 3px;
+        transition: all 0.5s;
+      
+    }
+    // Content
+    .content {
+        width: 50%;
+        margin-left: 117px;
+        padding-top: 130px;
+    }
+    .content{ 
+        h1{
+        text-transform: uppercase;
+        color: $warna1;
+        font-weight: 900;
+        font-size: 80px;
+        
+    } h2{
+        text-transform: uppercase;
+        color: $warna2;
+        font-size: 65px;
+    } p{
+        width: 550px;
+        padding-top: 50px;
+        color: $warna1;
+        text-transform: uppercase;
+    }
+}
+// Button
+.content a{
+    display: inline-block;
+    color: white;
+    text-transform: uppercase;
+    background-color: $warna1;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 2em;
+    padding: 1em 2em;
+    margin-top: 50px;
+    margin-left: 25%;
+
+}
+
+// Animasi Humberger Menu
+/* Humberger Menu Aanimation */
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+
+}
+.menu-toggle span:nth-child(4){
+     transform-origin: 0 100%;
+
+}
+
+/* Menggunakan Konsep sibling [~] */
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(-2px, 1px);
+}
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg) translate(-5px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+    transform: scale(0);
+}
+
+// Responsive
+
+/* Responsive Uk:Tablet */
+@media screen and (max-width: 768px){
+    body {
+        background-image: url(../img/hero.png);
+        background-size: 69vmax;
+        background-repeat: no-repeat;
+        background-position: top right;
+
+    }
+    nav {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        padding-left: -100px;
+        position: fixed;
+    } nav ul {
+        color: $warna1;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        flex-direction: column;
+        background-color: $warna2;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: -1;
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+    }.brand h4 {
+        text-decoration: none;
+        color: $warna1;
+        text-transform: uppercase;
+        font-size: 20px;
+        
+        &:hover{
+            color: $warna2;
+        }
+    }
+
+    .content {
+        width: 50%;
+        margin-left: 50px;
+        padding-top: 50px;
+    }
+    .content{ 
+        h1{
+            margin-top: 20px;
+        text-transform: uppercase;
+        color: $warna1;
+        font-weight: bolder;
+        font-size: 25px;
+        
+    } h2{
+        text-transform: uppercase;
+        color: $warna2;
+        font-size: 30px;
+    } h1{
+        font-size: 50px;
+    } 
+    
+    p{
+        display: none;
+    }
+}
+.menu-toggle{
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+// Button
+    .content a{
+        display: inline-block;
+        color: white;
+        text-transform: uppercase;
+        background-color: $warna1;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 2em;
+        padding: 0.5em 1.5em;
+        margin-top: 10px;
+        margin-left: -10px;
+
+    }
+}
+nav ul.slide{
+    opacity: 1;
+ transform: translateX(0);   
+}
+    
+   
